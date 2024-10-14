@@ -1,9 +1,4 @@
-import {
-  IsEmail,
-  IsNotEmpty,
-  IsStrongPassword,
-  MinLength,
-} from 'class-validator';
+import { IsEmail, IsNotEmpty } from 'class-validator';
 import { UniqueUserEmail } from '../validators/unique-user-email.validator';
 
 export class RegisterUserDto {
@@ -12,8 +7,6 @@ export class RegisterUserDto {
   email: string;
 
   @IsNotEmpty()
-  @MinLength(6)
-  @IsStrongPassword()
   password: string;
 
   displayName: string;
