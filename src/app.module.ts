@@ -8,6 +8,8 @@ import { AlbumsController } from './albums/albums.controller';
 import { Album, AlbumSchema } from './schema/album.schema';
 import { TracksController } from './tracks/tracks.controller';
 import { Track, TrackSchema } from './schema/track.schema';
+import { User, UserSchema } from './schema/user.schema';
+import { UsersController } from './users/users.controller';
 
 @Module({
   imports: [
@@ -15,12 +17,14 @@ import { Track, TrackSchema } from './schema/track.schema';
     MongooseModule.forFeature([{ name: Artist.name, schema: ArtistSchema }]),
     MongooseModule.forFeature([{ name: Album.name, schema: AlbumSchema }]),
     MongooseModule.forFeature([{ name: Track.name, schema: TrackSchema }]),
+    MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],
   controllers: [
     AppController,
     ArtistsController,
     AlbumsController,
     TracksController,
+    UsersController,
   ],
   providers: [AppService],
 })
