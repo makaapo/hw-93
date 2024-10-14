@@ -32,7 +32,7 @@ export class TracksController {
   @Post()
   async create(@Body() trackDto: CreateTrackDto) {
     return await this.trackModel.create({
-      artist: trackDto.album,
+      album: trackDto.album,
       title: trackDto.title,
       duration: trackDto.duration,
       num: trackDto.number,
